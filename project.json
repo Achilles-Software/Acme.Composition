@@ -1,0 +1,40 @@
+﻿{
+    "title": "Achilles ACME CMS Composition Library",
+    "copyright": "Copyright © 2016 Achilles Software",
+    "version": "0.1.0-alpha",
+    "description": "Achilles ACME CMS module composition services.",
+    "authors": [ "Todd J. Thomson" ],
+    
+    "packOptions": {
+        "owners": [ "Achilles Software" ],
+        "repository": {
+            "type": "git",
+            "url": "git://github.com/Achilles-Software/Acme.Composition"
+        },
+        "tags": [
+            "Achilles Software",
+            "ACME",
+            "CMS",
+            "Modules",
+            "Composition",
+            "ASP.NET Core"
+        ]
+    },
+    "buildOptions": {
+        "warningsAsErrors": true,
+        "nowarn": [
+            "CS1591"
+        ],
+        "xmlDoc": true
+    },
+    
+    "dependencies": {
+        "Microsoft.Extensions.DependencyModel": "1.0.0",
+        "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
+    },
+
+    "frameworks": {
+        "net451": {
+        }
+    }
+}
