@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>Achilles Software</Company>
     <Product>Achilles Acme CMS</Product>
@@ -10,11 +10,20 @@
     <Authors>Todd J. Thomson</Authors>
     <Description>Achilles Acme CMS composition library.</Description>
     <Version>0.1.0</Version>
+    <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <Copyright>Copyright © 2017 Achilles Software</Copyright>
+    <PackageProjectUrl>https://github.com/Achilles-Software/Acme.Composition</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/Achilles-Software/Acme.Composition/achilles-icon.png</PackageIconUrl>
+    <PackageTags>CMS; Module</PackageTags>
+    <PackageReleaseNotes>Prerelease package.</PackageReleaseNotes>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Achilles-Software/Acme.Composition</RepositoryUrl>
+    <RootNamespace>Achilles.Acme.Composition</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="1.1.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.0.0" />
   </ItemGroup>
 
 </Project>
