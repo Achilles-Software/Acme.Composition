@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Prerelease package.</releaseNotes>
-    <copyright>Copyright © 2016 Achilles Software</copyright>
+    <copyright>Copyright © 2017 Achilles Software</copyright>
     <tags>$tags$</tags>
   </metadata>
 </package>

@@ -5,11 +5,11 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>Achilles Software</Company>
     <Product>Achilles Acme CMS</Product>
-    <AssemblyVersion>0.1.0.0</AssemblyVersion>
-    <FileVersion>0.1.0.0</FileVersion>
+    <AssemblyVersion>0.2.0.0</AssemblyVersion>
+    <FileVersion>0.2.0.0</FileVersion>
     <Authors>Todd J. Thomson</Authors>
     <Description>Achilles Acme CMS composition library.</Description>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
     <Copyright>Copyright © 2017 Achilles Software</Copyright>
     <PackageProjectUrl>https://github.com/Achilles-Software/Acme.Composition</PackageProjectUrl>
