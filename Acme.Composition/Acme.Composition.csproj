@@ -3,19 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Company>Achilles Software</Company>
-    <Product>$(Product)</Product>
-    <AssemblyVersion>0.3.0.0</AssemblyVersion>
-    <FileVersion>0.3.0.0</FileVersion>
-    <Authors>Todd J. Thomson</Authors>
     <Description>Achilles Acme CMS composition library.</Description>
-    <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
-    <Copyright>Copyright © 2017 Achilles Software</Copyright>
     <PackageProjectUrl>https://github.com/Achilles-Software/Acme.Composition</PackageProjectUrl>
     <PackageIconUrl>https://github.com/Achilles-Software/Acme.Composition/achilles-icon.png</PackageIconUrl>
     <PackageTags>CMS; Module</PackageTags>
-    <PackageReleaseNotes>Prerelease package.</PackageReleaseNotes>
-    <RepositoryType>git</RepositoryType>
+
     <RepositoryUrl>https://github.com/Achilles-Software/Acme.Composition</RepositoryUrl>
     <RootNamespace>Achilles.Acme.Composition</RootNamespace>
   </PropertyGroup>
