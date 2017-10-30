@@ -11,6 +11,7 @@
 #region Namespaces
 
 using Microsoft.Extensions.DependencyModel;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,7 +25,7 @@ namespace Achilles.Acme.Composition.Modules
     public static class ComposableAssemblyDiscoveryProvider
     {
         /// <summary>
-        /// Gets the set of assembly names that are used for discovery of ACME modules.
+        /// Gets the set of assembly names that are used for discovery of Acme modules.
         /// </summary>
         private static HashSet<string> ReferenceAssemblies { get; } = new HashSet<string>( StringComparer.Ordinal )
         {
@@ -35,7 +36,7 @@ namespace Achilles.Acme.Composition.Modules
         public static IEnumerable<ComposablePart> DiscoverComposableAssemblies( string entryPointAssemblyName )
         {
             var entryAssembly = Assembly.Load( new AssemblyName( entryPointAssemblyName ) );
-            var context = DependencyContext.Load( Assembly.Load( new AssemblyName( entryPointAssemblyName ) ) );
+            var context = DependencyContext.Load( entryAssembly );
 
             return GetCandidateAssemblies( entryAssembly, context ).Select( p => new ComposablePart( p ) ); 
         }
@@ -54,7 +55,7 @@ namespace Achilles.Acme.Composition.Modules
 
         /// <summary>
         /// Returns a list of libraries that references the assemblies in <see cref="ReferenceAssemblies"/>.
-        /// By default it returns all assemblies that reference Acme.Composition.
+        /// By default it returns all assemblies that reference Acme.Composition (IModule).
         /// </summary>
         /// <returns>A set of <see cref="RuntimeLibrary"/>.</returns>
         private static IEnumerable<RuntimeLibrary> GetCandidateLibraries( DependencyContext dependencyContext )

@@ -17,6 +17,9 @@ using System.Reflection;
 
 namespace Achilles.Acme.Composition.Modules
 {
+    /// <summary>
+    /// Conventions for determining whether a Type is an Acme module.
+    /// </summary>
     public static class ModuleConventions
     {
         #region Fields
@@ -29,7 +32,7 @@ namespace Achilles.Acme.Composition.Modules
         #region Public API Methods
 
         /// <summary>
-        /// 
+        /// Flag for whether the specified TypeInfo is an Acme Module.
         /// </summary>
         /// <param name="typeInfo"></param>
         public static bool IsModule( TypeInfo typeInfo )

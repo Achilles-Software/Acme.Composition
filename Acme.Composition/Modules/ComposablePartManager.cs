@@ -11,6 +11,7 @@
 #region Namespaces
 
 using System.Collections.Generic;
+using System.Reflection;
 
 #endregion
 
@@ -26,5 +27,30 @@ namespace Achilles.Acme.Composition.Modules
         /// </summary>
         public IList<ComposablePart> ComposableParts { get; } = new List<ComposablePart>();
 
+        public List<ModulePart> GetModules()
+        {
+            var modules = new List<ModulePart>();
+
+            foreach ( var part in ComposableParts )
+            {
+                var moduleTypes = new List<TypeInfo>();
+
+                foreach ( var type in part.Types )
+                {
+                    
+                    if ( ModuleConventions.IsModule( type ) )
+                    {
+                        moduleTypes.Add( type );
+                    }
+                }
+
+                if ( moduleTypes.Count > 0 )
+                {
+                    modules.Add( new ModulePart( part.Assembly, moduleTypes ) );
+                }
+            }
+
+            return modules;
+        }
     }
 }
