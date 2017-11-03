@@ -34,17 +34,23 @@ namespace Achilles.Acme.Composition.Modules
         #region Properties
 
         /// <summary>
-        /// Gets the <see cref="Assembly"/> of the <see cref="ComposablePart"/>.
+        /// Gets the <see cref="Assembly"/> of the <see cref="ComposableAssembly"/>.
         /// </summary>
         public Assembly Assembly { get; }
 
+        /// <summary>
+        /// Gets the list of <see cref="TypeInfo"/> module types. 
+        /// </summary>
         public IList<TypeInfo> Types { get; }
 
         /// <summary>
-        /// Gets the name of the <see cref="ComposablePart"/>.
+        /// Gets the name of the <see cref="ComposableAssembly"/>.
         /// </summary>
         public string Name => Assembly.GetName().Name;
 
+        /// <summary>
+        /// Gets the list of module part dependencies.
+        /// </summary>
         public IEnumerable<AssemblyName> Dependencies => Assembly.GetReferencedAssemblies();
 
         #endregion

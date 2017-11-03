@@ -11,6 +11,7 @@
 #region Namespaces
 
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 #endregion
 
@@ -23,6 +24,6 @@ namespace Achilles.Acme.Composition.Modules
         /// <summary>
         /// The module initialization method.
         /// </summary>
-        void Initialize( IServiceCollection services );
+        void Initialize( IServiceCollection services, IConfiguration configuration );
     }
 }

@@ -10,7 +10,6 @@
 
 #region Namespaces
 
-using Microsoft.Extensions.DependencyModel;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -19,28 +18,33 @@ using System.Reflection;
 
 namespace Achilles.Acme.Composition.Modules
 {
-    public class ComposablePart
+    /// <summary>
+    /// A discoverable composition assembly.
+    /// </summary>
+    public class ComposableAssembly
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="ComposablePart"/>.
+        /// Initializes a new instance of <see cref="ComposableAssembly"/>.
         /// </summary>
-        /// <param name="assembly">The composable part assembly.</param>
-        public ComposablePart( Assembly assembly )
+        /// <param name="assembly">The composable assembly.</param>
+        public ComposableAssembly( Assembly assembly )
         {
             Assembly = assembly ?? throw new ArgumentNullException( nameof( assembly ) );
         }
 
         /// <summary>
-        /// Gets the <see cref="Assembly"/> of the <see cref="ComposablePart"/>.
+        /// Gets the <see cref="Assembly"/> of the <see cref="ComposableAssembly"/>.
         /// </summary>
         public Assembly Assembly { get; }
 
         /// <summary>
-        /// Gets the name of the <see cref="ComposablePart"/>.
+        /// Gets the name of the <see cref="ComposableAssembly"/>.
         /// </summary>
         public string Name => Assembly.GetName().Name;
 
+        /// <summary>
+        /// Gets the list of types in the <see cref="ComposableAssembly"/>.
+        /// </summary>
         public IEnumerable<TypeInfo> Types => Assembly.DefinedTypes;
-
     }
 }

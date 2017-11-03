@@ -33,12 +33,12 @@ namespace Achilles.Acme.Composition.Modules
             "Acme.Core"
         };
 
-        public static IEnumerable<ComposablePart> DiscoverComposableAssemblies( string entryPointAssemblyName )
+        public static IEnumerable<ComposableAssembly> DiscoverComposableAssemblies( string entryPointAssemblyName )
         {
             var entryAssembly = Assembly.Load( new AssemblyName( entryPointAssemblyName ) );
             var context = DependencyContext.Load( entryAssembly );
 
-            return GetCandidateAssemblies( entryAssembly, context ).Select( p => new ComposablePart( p ) ); 
+            return GetCandidateAssemblies( entryAssembly, context ).Select( p => new ComposableAssembly( p ) ); 
         }
 
         private static IEnumerable<Assembly> GetCandidateAssemblies( Assembly entryAssembly, DependencyContext dependencyContext )

@@ -6,13 +6,14 @@
     <Description>Achilles Acme CMS composition library.</Description>
     <PackageProjectUrl>https://github.com/Achilles-Software/Acme.Composition</PackageProjectUrl>
     <PackageIconUrl>https://github.com/Achilles-Software/Acme.Composition/achilles-icon.png</PackageIconUrl>
-    <PackageTags>CMS; Module</PackageTags>
-
+    <PackageTags>Amce CMS; CMS; Composition; Module</PackageTags>
     <RepositoryUrl>https://github.com/Achilles-Software/Acme.Composition</RepositoryUrl>
     <RootNamespace>Achilles.Acme.Composition</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.0.0" />
   </ItemGroup>
