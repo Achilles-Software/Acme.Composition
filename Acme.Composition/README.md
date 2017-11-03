@@ -1,2 +1,2 @@
 # Acme.Composition
-Achilles Acme CMS module composition library .
+Achilles Acme CMS module composition library.

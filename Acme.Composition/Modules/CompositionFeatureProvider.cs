@@ -19,16 +19,24 @@ using System.Reflection;
 
 namespace Achilles.Acme.Composition.Modules
 {
+    /// <summary>
+    /// An <see cref="IApplicationFeatureProvider{TFeature}"/> for <see cref="CompositionFeature"/>.
+    /// </summary>
     public class CompositionFeatureProvider : IApplicationFeatureProvider<CompositionFeature>
     {
         private IList<ModulePart> _moduleParts = null;
         private string _assemblyName;
 
+        /// <summary>
+        /// Initializes a new <see cref="CompositionFeatureProvider"/> instance.
+        /// </summary>
+        /// <param name="applicationAssemblyName">The appliction assembly name used for module discovery.</param>
         public CompositionFeatureProvider( string applicationAssemblyName )
         {
             _assemblyName = applicationAssemblyName;
         }
 
+        /// <inheritdoc />
         public void PopulateFeature( IEnumerable<ApplicationPart> parts, CompositionFeature feature )
         {
             foreach ( var modulePart in GetModuleParts() )
@@ -73,6 +81,11 @@ namespace Achilles.Acme.Composition.Modules
             return _moduleParts;
         }
 
+        /// <summary>
+        /// Orders the module parts by dependencies.
+        /// </summary>
+        /// <param name="moduleParts"></param>
+        /// <returns></returns>
         private IList<ModulePart> OrderModulePartsByDependencies( List<ModulePart> moduleParts )
         {
             if ( moduleParts.Count <= 1 )
