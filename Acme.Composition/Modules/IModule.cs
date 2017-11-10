@@ -10,20 +10,36 @@
 
 #region Namespaces
 
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 #endregion
 
 namespace Achilles.Acme.Composition.Modules
 {
     /// <summary>
-    /// The interface for modules deployed in an ACME web application.
+    /// An interface for composable modules.
     /// </summary>
-    public interface IModule {
+    public interface IModule
+    {
         /// <summary>
         /// The module initialization method.
         /// </summary>
-        void Initialize( IServiceCollection services, IConfiguration configuration );
+        ///  /// <param name="services">Service collection to add module services.</param>
+        void Initialize( IServiceCollection services );
+
+        /// <summary>
+        /// Method to add services to the service collection
+        /// </summary>
+        /// <param name="services">Service collection to add module services.</param>
+        /// <param name="configuration">The applications configuration root.</param>
+        void ConfigureServices( IServiceCollection services, IConfiguration configuration );
+
+        /// <summary>
+        /// Method to configure the module.
+        /// </summary>
+        /// <param name="env"></param>
+        void Configure( IHostingEnvironment env );
     }
 }
