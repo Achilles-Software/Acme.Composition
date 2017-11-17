@@ -1,5 +1,5 @@
 # Acme.Composition
-Achilles Acme.Composition provides module composition for ASP.NET Core MVC.
+Achilles Acme.Composition provides module composition services using ASP.NET Core MVC application parts.
 
 Acme.Composition is a core package of Achilles Acme CMS.
 

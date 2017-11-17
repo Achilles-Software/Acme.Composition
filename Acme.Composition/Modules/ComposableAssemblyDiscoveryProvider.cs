@@ -22,6 +22,9 @@ using System.Reflection;
 
 namespace Achilles.Acme.Composition.Modules
 {
+    /// <summary>
+    /// An MVC application parts provider for the Acme module composition feature.
+    /// </summary>
     public static class ComposableAssemblyDiscoveryProvider
     {
         /// <summary>
@@ -33,6 +36,11 @@ namespace Achilles.Acme.Composition.Modules
             "Acme.Core"
         };
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entryPointAssemblyName"></param>
+        /// <returns></returns>
         public static IEnumerable<ComposableAssembly> DiscoverComposableAssemblies( string entryPointAssemblyName )
         {
             var entryAssembly = Assembly.Load( new AssemblyName( entryPointAssemblyName ) );

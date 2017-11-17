@@ -18,10 +18,18 @@ using System.Reflection;
 
 namespace Achilles.Acme.Composition.Modules
 {
+    /// <summary>
+    /// A module part.
+    /// </summary>
     public class ModulePart
     {
         #region Constructor(s)
 
+        /// <summary>
+        /// Creates a new <see cref="ModulePart"/>.
+        /// </summary>
+        /// <param name="assembly"></param>
+        /// <param name="moduleTypes"></param>
         public ModulePart( Assembly assembly, IList<TypeInfo> moduleTypes )
         {
             Assembly = assembly ?? throw new ArgumentNullException( nameof( assembly ) );

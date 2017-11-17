@@ -10,6 +10,8 @@
 
 #region Namespaces
 
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
+using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 
 #endregion
