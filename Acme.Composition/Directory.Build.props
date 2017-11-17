@@ -1,6 +1,7 @@
 ﻿<Project>
 
-  <Import Project="../../Acme.Build/Acme.Package.props"/>
-  <Import Project="../../Acme.Build/Acme.Version.props" />
+  <Import Project="../Acme.Build/Acme.Package.props"/>
+  <Import Project="../Acme.Build/Acme.Version.props" />
+  <Import Project="../Acme.Build/Acme.Build.targets" />  
 
 </Project>
