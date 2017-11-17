@@ -1,0 +1,3 @@
+[submodule "Acme.Build"]
+	path = Acme.Build
+	url = https://achilles-dev/AchillesProjects/Acme/_git/Acme.Build
