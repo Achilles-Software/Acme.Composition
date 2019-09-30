@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Acme.Composition</name>
+    </assembly>
+    <members>
+        <member name="T:Achilles.Acme.Composition.Modules.ComposableAssembly">
+            <summary>
+            A discoverable composition assembly.
+            </summary>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.ComposableAssembly.#ctor(System.Reflection.Assembly)">
+            <summary>
+            Initializes a new instance of <see cref="T:Achilles.Acme.Composition.Modules.ComposableAssembly"/>.
+            </summary>
+            <param name="assembly">The composable assembly.</param>
+        </member>
+        <member name="P:Achilles.Acme.Composition.Modules.ComposableAssembly.Assembly">
+            <summary>
+            Gets the <see cref="P:Achilles.Acme.Composition.Modules.ComposableAssembly.Assembly"/> of the <see cref="T:Achilles.Acme.Composition.Modules.ComposableAssembly"/>.
+            </summary>
+        </member>
+        <member name="P:Achilles.Acme.Composition.Modules.ComposableAssembly.Name">
+            <summary>
+            Gets the name of the <see cref="T:Achilles.Acme.Composition.Modules.ComposableAssembly"/>.
+            </summary>
+        </member>
+        <member name="P:Achilles.Acme.Composition.Modules.ComposableAssembly.Types">
+            <summary>
+            Gets the list of types in the <see cref="T:Achilles.Acme.Composition.Modules.ComposableAssembly"/>.
+            </summary>
+        </member>
+        <member name="T:Achilles.Acme.Composition.Modules.ComposableAssemblyDiscoveryProvider">
+            <summary>
+            An MVC application parts provider for the Acme module composition feature.
+            </summary>
+        </member>
+        <member name="P:Achilles.Acme.Composition.Modules.ComposableAssemblyDiscoveryProvider.ReferenceAssemblies">
+            <summary>
+            Gets the set of assembly names that are used for discovery of Acme modules.
+            </summary>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.ComposableAssemblyDiscoveryProvider.DiscoverComposableAssemblies(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="entryPointAssemblyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.ComposableAssemblyDiscoveryProvider.GetCandidateLibraries(Microsoft.Extensions.DependencyModel.DependencyContext)">
+            <summary>
+            Returns a list of libraries that references the assemblies in <see cref="P:Achilles.Acme.Composition.Modules.ComposableAssemblyDiscoveryProvider.ReferenceAssemblies"/>.
+            By default it returns all assemblies that reference Acme.Composition (IModule).
+            </summary>
+            <returns>A set of <see cref="T:Microsoft.Extensions.DependencyModel.RuntimeLibrary"/>.</returns>
+        </member>
+        <member name="T:Achilles.Acme.Composition.Modules.CompositionFeature">
+            <summary>
+            The list of module types in an Acme application. The <see cref="T:Achilles.Acme.Composition.Modules.CompositionFeature"/> can be populated
+            using the <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager"/> that is available during startup at <see cref="P:Microsoft.Extensions.DependencyInjection.IMvcBuilder.PartManager"/>
+            and <see cref="P:Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder.PartManager"/> or at a later stage by requiring the <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager"/>
+            as a dependency in a component.
+            </summary>
+        </member>
+        <member name="P:Achilles.Acme.Composition.Modules.CompositionFeature.Modules">
+            <summary>
+            Gets the list of module types in an Acme application.
+            </summary>
+        </member>
+        <member name="T:Achilles.Acme.Composition.Modules.CompositionFeatureProvider">
+            <summary>
+            An <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationParts.IApplicationFeatureProvider`1"/> for <see cref="T:Achilles.Acme.Composition.Modules.CompositionFeature"/>.
+            </summary>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.CompositionFeatureProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new <see cref="T:Achilles.Acme.Composition.Modules.CompositionFeatureProvider"/> instance.
+            </summary>
+            <param name="applicationAssemblyName">The appliction assembly name used for module discovery.</param>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.CompositionFeatureProvider.PopulateFeature(System.Collections.Generic.IEnumerable{Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPart},Achilles.Acme.Composition.Modules.CompositionFeature)">
+            <inheritdoc />
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.CompositionFeatureProvider.GetModuleParts">
+            <summary>
+            Gets the list of <see cref="T:Achilles.Acme.Composition.Modules.ModulePart"/>s ordered by dependencies.
+            </summary>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.CompositionFeatureProvider.OrderModulePartsByDependencies(System.Collections.Generic.List{Achilles.Acme.Composition.Modules.ModulePart})">
+            <summary>
+            Orders the module parts by dependencies.
+            </summary>
+            <param name="moduleParts"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Achilles.Acme.Composition.Modules.IModule">
+            <summary>
+            An interface for composable modules.
+            </summary>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.IModule.Initialize(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            The module initialization method.
+            </summary>
+             /// <param name="services">Service collection to add module services.</param>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.IModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Method to add services to the service collection
+            </summary>
+            <param name="services">Service collection to add module services.</param>
+            <param name="configuration">The applications configuration root.</param>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.IModule.Configure(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Method to configure the module.
+            </summary>
+            <param name="env"></param>
+        </member>
+        <member name="T:Achilles.Acme.Composition.Modules.ModuleConventions">
+            <summary>
+            Conventions for determining whether a Type is an Acme module.
+            </summary>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.ModuleConventions.IsModule(System.Reflection.TypeInfo)">
+            <summary>
+            Flag for whether the specified TypeInfo is an Acme Module.
+            </summary>
+            <param name="typeInfo"></param>
+        </member>
+        <member name="T:Achilles.Acme.Composition.Modules.ModulePart">
+            <summary>
+            A module part.
+            </summary>
+        </member>
+        <member name="M:Achilles.Acme.Composition.Modules.ModulePart.#ctor(System.Reflection.Assembly,System.Collections.Generic.IList{System.Reflection.TypeInfo})">
+            <summary>
+            Creates a new <see cref="T:Achilles.Acme.Composition.Modules.ModulePart"/>.
+            </summary>
+            <param name="assembly"></param>
+            <param name="moduleTypes"></param>
+        </member>
+        <member name="P:Achilles.Acme.Composition.Modules.ModulePart.Assembly">
+            <summary>
+            Gets the <see cref="P:Achilles.Acme.Composition.Modules.ModulePart.Assembly"/> of the <see cref="T:Achilles.Acme.Composition.Modules.ComposableAssembly"/>.
+            </summary>
+        </member>
+        <member name="P:Achilles.Acme.Composition.Modules.ModulePart.Types">
+            <summary>
+            Gets the list of <see cref="T:System.Reflection.TypeInfo"/> module types. 
+            </summary>
+        </member>
+        <member name="P:Achilles.Acme.Composition.Modules.ModulePart.Name">
+            <summary>
+            Gets the name of the <see cref="T:Achilles.Acme.Composition.Modules.ComposableAssembly"/>.
+            </summary>
+        </member>
+        <member name="P:Achilles.Acme.Composition.Modules.ModulePart.Dependencies">
+            <summary>
+            Gets the list of module part dependencies.
+            </summary>
+        </member>
+    </members>
+</doc>

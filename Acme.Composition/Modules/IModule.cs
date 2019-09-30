@@ -40,6 +40,6 @@ namespace Achilles.Acme.Composition.Modules
         /// Method to configure the module.
         /// </summary>
         /// <param name="env"></param>
-        void Configure( IHostingEnvironment env );
+        void Configure( IWebHostEnvironment env );
     }
 }
