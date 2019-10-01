@@ -2,13 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Description>Achilles Acme CMS composition library.</Description>
     <PackageProjectUrl>https://github.com/Achilles-Software/Acme.Composition</PackageProjectUrl>
     <PackageIconUrl>https://github.com/Achilles-Software/Acme.Composition/achilles-icon.png</PackageIconUrl>
     <PackageTags>Amce CMS; CMS; Composition; Module</PackageTags>
     <RepositoryUrl>https://github.com/Achilles-Software/Acme.Composition</RepositoryUrl>
     <RootNamespace>Achilles.Acme.Composition</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseUrl />
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,6 +26,13 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
