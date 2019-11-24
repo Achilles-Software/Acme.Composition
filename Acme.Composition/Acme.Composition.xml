@@ -56,7 +56,7 @@
         </member>
         <member name="T:Achilles.Acme.Composition.Modules.CompositionFeature">
             <summary>
-            The list of module types in an Acme application. The <see cref="T:Achilles.Acme.Composition.Modules.CompositionFeature"/> can be populated
+            The list of module types in an Acme.Core application. The <see cref="T:Achilles.Acme.Composition.Modules.CompositionFeature"/> can be populated
             using the <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager"/> that is available during startup at <see cref="P:Microsoft.Extensions.DependencyInjection.IMvcBuilder.PartManager"/>
             and <see cref="P:Microsoft.Extensions.DependencyInjection.IMvcCoreBuilder.PartManager"/> or at a later stage by requiring the <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager"/>
             as a dependency in a component.
