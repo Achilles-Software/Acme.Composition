@@ -46,7 +46,8 @@ namespace Achilles.Acme.Composition.Modules
             var entryAssembly = Assembly.Load( new AssemblyName( entryPointAssemblyName ) );
             var context = DependencyContext.Load( entryAssembly );
 
-            return GetCandidateAssemblies( entryAssembly, context ).Select( p => new ComposableAssembly( p ) ); 
+            return GetCandidateAssemblies( entryAssembly, context )
+                .Select( p => new ComposableAssembly( p ) ); 
         }
 
         private static IEnumerable<Assembly> GetCandidateAssemblies( Assembly entryAssembly, DependencyContext dependencyContext )
