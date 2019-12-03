@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <WebSdkAnalyzersPath>$(NetCoreRoot)\sdk\$(NETCoreSdkVersion)\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs</WebSdkAnalyzersPath>
     <Description>Achilles Acme.Cloud CMS composition library.</Description>
     <PackageProjectUrl>https://github.com/Achilles-Software/Acme.Composition</PackageProjectUrl>
